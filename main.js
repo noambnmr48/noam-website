@@ -1,7 +1,8 @@
+
 function generateWallpaper(color) {
   const totalWallpapers = 12;
   const randomIndex = Math.floor(Math.random() * totalWallpapers) + 1;
-  const imagePath = `public/wallpapers/${color}/${randomIndex}.jpg`;
+  const imagePath = `/wallpapers/${color}/${randomIndex}.jpg`;
 
   const wallpaperDisplay = document.getElementById('wallpaperDisplay');
   wallpaperDisplay.innerHTML = `
