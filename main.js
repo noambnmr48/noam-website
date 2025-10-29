@@ -1,19 +1,23 @@
-console.log("Hello World!");
-setupCounter();
+function generateWallpaper(color) {
+  const totalWallpapers = 12;
+  const randomIndex = Math.floor(Math.random() * totalWallpapers) + 1;
+  const imagePath = `public/wallpapers/${color}/${randomIndex}.jpg`;
 
-function setupCounter() {
-  let count = 0;
+  const wallpaperDisplay = document.getElementById('wallpaperDisplay');
+  wallpaperDisplay.innerHTML = `
+    <img src="${imagePath}" alt="${color} wallpaper">
+    <div class="wallpaper-actions">
+      <button onclick="generateWallpaper('${color}')">Regenerate</button>
+      <button onclick="downloadWallpaper('${imagePath}')">Download</button>
+    </div>
+  `;
+}
 
-  function increment() {
-    count++;
-    document.querySelector("#count").innerHTML = count;
-  }
-
-  function decrement() {
-    count--;
-    document.querySelector("#count").innerHTML = count;
-  }
-
-  document.querySelector("#increment").addEventListener("click", increment);
-  document.querySelector("#decrement").addEventListener("click", decrement);
+function downloadWallpaper(imagePath) {
+  const link = document.createElement('a');
+  link.href = imagePath;
+  link.download = 'wallpaper.jpg';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }

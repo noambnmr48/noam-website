@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website</title>
-    <link href="/styles/main.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header role="banner">
-      <h1>Welcome to my Website!</h1>
-    </header>
-    <main>
-      <p>This is a paragraph.</p>
-      <a href="/elements.html">Elements Page</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wallpaper Generator</title>
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <main class="main-content">
+    <h1>✨ Wallpaper Generator ✨</h1>
+    <h2>Choose one color and generate a wallpaper💖</h2>
+    <p>Colors bring joy into our lives. Even small things, like a phone wallpaper, can brighten your day. So go ahead and choose your new wallpaper!</p>
 
-      <div class="counter">
-        <h2>Counter</h2>
-        <button id="increment" class="counter-button">+</button>
-        <button id="decrement" class="counter-button">−</button>
-        <span id="count">0</span>
-      </div>
-    </main>
+    <div class="button-container">
+      <button onclick="generateWallpaper('purple')">Purple</button>
+      <button onclick="generateWallpaper('pink')">Pink</button>
+      <button onclick="generateWallpaper('green')">Green</button>
+      <button onclick="generateWallpaper('yellow')">Yellow</button>
+    </div>
 
-    <script type="module" src="/main.js"></script>
-  </body>
+    <div class="wallpaper-display" id="wallpaperDisplay"></div>
+
+    <footer>
+      <a href="about.html">About the Creator</a>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
